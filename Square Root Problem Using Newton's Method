@@ -1,0 +1,31 @@
+Problem  solved my Md. Asif Imtiyaj Chowdhury.
+
+#include<stdio.h>
+#include<math.h>
+
+float squareRoot(float num, float ans, float tol)
+{
+    float var2;
+
+    float var1 = ((ans*ans)+num) / (2*ans);
+    if(((var1*var1)-num) <= tol)
+    {
+        return var1;
+    }
+    else
+    {
+        var2 = squareRoot(num, var1, tol);
+        return var2;
+    }
+}
+
+int main()
+{
+    float result;
+
+    printf("Answer: ");
+    //result = squareRoot(4, 2, 0.01);
+    result = squareRoot(5, 2, 0.01);
+    printf("%.2f", result);
+    printf("\n");
+}
